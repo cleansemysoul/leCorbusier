@@ -1,0 +1,511 @@
+/*
+			Sommaire :
+			_ Global
+			_ Padding des sections
+			_ Header
+			_ Scroll to the Top 
+			_ Biographie
+			_ Actualités
+			_ Réalisations
+			_ video
+			_ Contact
+			_ Footer
+*/
+/*				Global			*/
+a{
+	text-decoration: none;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+h1{
+	font-size: 2.3rem;
+	font-family: 'kalambold';
+	text-transform: capitalize;
+}
+#biographie h1,
+#actualites h1,
+#realisations h1,
+#video h1,
+#contact h1{
+	text-decoration: underline var(--blue);
+	text-align: center;
+	width: 100%;
+	font-size: 3rem;
+}
+	h2{
+	font-size: 1.5rem;
+}
+h3{
+	font-size: 1.3rem;
+}
+p,q{
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
+	text-align: start;
+}
+.pb{
+	padding-bottom: 30px;
+}
+.more{
+	font-weight: bold;
+	padding: 20px 45px;
+	display: inline-block;
+	color: var(--brown);
+	border: solid 3px var(--brown);
+	transition-duration: .3s;
+}
+.more:hover,.more:focus,.more:active{
+	background-color: var(--blue);
+	border: solid 3px var(--blue);
+	color: var(--offwhite);
+}
+
+/*			Padding Sections			*/
+#biographie,
+#actualites,
+#realisations,
+#video,
+#contact{
+	padding: 20px;
+}
+@media all and (min-width: 1024px){
+	#biographie,
+	#actualites,
+	#realisations,
+	#video,
+	#contact{
+		padding: 100px 4%;
+	}
+	.pb{
+		padding-bottom: 50px;	
+	}
+}
+
+/* 			Header					*/
+header{
+	position: fixed;
+	width: 100%;
+	font-weight: bold;
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+	z-index: 2;
+}
+header, header h1, header a{
+	color: var(--offwhite);
+}
+header ul{
+	list-style: none;
+	text-transform: uppercase;
+}
+header nav{
+	padding:15px;
+	background-color: var(--brown);
+}
+@media all and (max-width: 1024px){
+	header h1{
+		display: inline-block;
+	}
+	#burger{
+		float: right;
+		border-top:solid 3px var(--offwhite);
+		border-bottom:solid 3px var(--offwhite);
+		padding: 15px 20px;
+		cursor: pointer;
+		position: relative;
+		margin: 8px;
+	}
+	#menu-listing{
+		display: none;
+		position: relative;
+	}
+	#burger::before,#burger::after{
+		position: absolute;
+		content:'';
+		top: 50%;
+		left: 5%;
+		display: block;
+		width: 90%;
+		height: 3px;
+		background-color: var(--offwhite);
+		transition: all .3s;
+	}
+	#burger:not(.close){
+		border: none;
+		transform: rotate(90deg);
+		transition: all .3s;
+	}
+	#burger:not(.close)::before{
+		transform: rotate(45deg);
+	}
+	#burger:not(.close)::after{
+		transform: rotate(-45deg);
+	}
+	#burger.close + ul{
+		left: -100%;
+	}
+	#burger:not(.close) + #menu-listing{
+		display: block;
+		background-color: var(--brown);
+		height: 100vh;
+		width: 100vw;
+		z-index: 1;
+		text-align: center;
+	}
+	#menu-listing li{
+		padding: 7vh 0;
+	}	
+	#menu-listing a{
+		padding: 10px 0;
+	}
+}
+@media all and (min-width: 1024px){
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	header nav ul{
+		display: flex;
+	}
+}
+a.line{
+	position: relative;
+	font-size: 1.2rem;
+}
+a.line::before{
+	content:"";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--blue);
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all ease-in-out .3s;
+}
+a.line:hover::before,a.line:focus::before{
+	visibility: visible;
+	transform: scaleX(1);
+}
+
+/*			To the Top button */
+#toTop{
+	display: none;
+	position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: var(--brownlight);
+  color: var(--offwhitelight);
+  cursor: pointer;
+  padding: 15px 25px;
+	border-radius: 5px;
+  font-size: 45px;
+}
+#toTop:hover{
+	background-color: var(--brown);
+}
+
+/*			Biographie			*/
+#biographie{
+	overflow: hidden;
+}
+#biographie article{
+	position: relative;
+	color: var(--offwhite);
+}
+#biographie article:before{
+	content: "";
+	position: absolute;
+	background-color: var(--brown);
+	width: 130%;
+	height: 130%;
+	top: -15%;
+	left: -15%;
+	z-index: -1;
+}
+#biographie article{
+	text-align: center;
+}
+#biographie img{
+	display: block;
+	max-height: 80vh;
+	max-width: 90vw;
+	margin: auto;
+	box-shadow: 0 0 10px rgba(0,0,0,.7);
+}
+#biographie article{
+	margin: auto 25px;	
+}	
+#biographie h1{
+	padding-top: 20px;
+}
+#biographie a{
+	color: var(--offwhite);
+	border-color: var(--offwhite);
+}
+#biographie a:hover,#biographie a:focus,#biographie a:active{
+	border-color: var(--blue);
+}
+@media all and (max-width: 1024px){
+	#biographie{
+		padding-top: 100px;
+	}
+}
+@media all and (min-width: 1024px){
+	#biographie{
+		display: flex;
+		margin: auto 5%;
+		height: 80vh;
+	}
+	#biographie img{
+		max-height: 90vh;
+		max-width: 30vw;
+		margin: auto;
+	}
+	#biographie article{
+		margin: auto 25px;	
+	}	
+}
+
+/*			Actualités			*/
+#actualites article{
+	text-align: center;
+	position: relative;
+	padding:60px 0;
+}
+#actualites h2{
+	padding-bottom: 20px;
+}
+#actualites article div{
+	margin: 20px 0;
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+}
+#actualites img{
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin: auto;
+}
+#actualites p{
+	padding: 20px 20px 40px 20px;
+	text-align: start;
+}
+#actualites a{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+@media all and (min-width: 1024px){
+	#actualites{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	#actualites h1{
+		width: 100%;
+	}
+	#actualites article{
+		width: 30%;
+	}
+}
+
+/*			Realisations			*/
+#realisations{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	margin-bottom: 50px;
+}
+#slide{
+	width: 90vw;
+	margin: auto;
+}
+.oeuvre{
+	position: relative;
+}
+.oeuvre{
+	animation-name: fade;
+	animation-duration: 1s;
+}
+@keyframes fade{
+	from{opacity:.9}
+	to{opacity:1}
+}
+.content{
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.oeuvre img{
+	object-fit: cover;
+	vertical-align: middle;
+	height: 80vh;
+	width: 100%;
+}
+.info{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	padding: 30px;
+	background-color: rgba(0,0,0,.4);
+	color: var(--offwhite);
+}
+.info h3{
+	padding-bottom: 20px;
+	font-size: 1.5rem;
+}
+.info p{
+	font-size: 1.3rem;
+}
+#realisations a{
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	width: 200px;
+	margin: auto;
+}
+@media all and (max-width: 1024px){
+	#realisations .more{
+		padding: 15px;
+		width: 150px;
+	}
+		#previous{
+		left: 20px;
+		bottom:-50px;
+	}
+	#next{
+		right: 20px;
+		bottom: -50px;
+	}
+}
+@media all and (min-width: 1024px){
+	#previous{
+		left: 30%;
+		bottom:-50px;
+	}
+	#next{
+		right: 30%;
+		bottom: -50px;
+	}
+}
+
+/*			video			*/
+#video{
+	padding-top: 90px;
+	padding-bottom: 90px;
+	width: 100%;
+	text-align: center;
+}
+video{
+	width: 100%;
+	max-width: 1280px;
+}
+
+/*			Contact			*/
+#formulaire{
+	margin: auto;
+	width: 500px;
+	padding: 100px 75px;
+	background-color: var(--brown);
+	border-radius: 20px 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+@media all and (max-width: 1024px){
+	#formulaire{
+		width: 100%;
+	}
+}
+#formulaire div{
+	border-bottom: 2px solid #f8f8f8;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	font-size: 1.3rem;
+	color:#f8f8f8;
+}
+#formulaire input{
+	width: 100%;
+	padding: 15px 0;
+	margin-top: 15px;
+	border: none;
+	font-size: 1.3rem;
+	background-color: transparent;
+	color:#f8f8f8;
+}
+#formulaire input:focus,#formulaire textarea:focus{
+	border: solid 2px var(--blue);
+}
+#formulaire textarea{
+	width: 100%;
+	padding: 15px 0;
+	margin-top: 15px;
+	border: none;
+	font-size: 1.3rem;
+	background-color: transparent;
+	color:#f8f8f8;
+	resize: vertical;
+}
+#formulaire ::placeholder{
+	color: #f8f8f8;
+	opacity: .8;
+}
+#formulaire input[type=submit]{
+	display: block;
+	margin: auto;
+	text-transform: uppercase;
+	background-color: #f8f8f8;
+	color: var(--blue);
+}
+#formulaire input[type=submit]:hover{
+	background-color: var(--blue);
+	color: #f8f8f8;
+}
+
+/*			Footer			*/
+footer{
+	margin-top: 50px;
+	background-color: var(--brown);
+	color: var(--offwhite);
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+footer h3{
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	padding-bottom: 50px;
+}
+#NavLeft, #NavRight{
+	padding: 25px;
+}
+#NavLeft ul, #NavRight ul{
+	list-style: none;
+}
+footer li{
+	padding: 10px 0;
+}
+footer li a{
+	padding: 10px 0;
+	color: var(--offwhite);
+}
+@media all and (max-width: 1024px){
+	footer nav,footer nav ul {
+		display: block
+	}
+	footer ul+ul{
+	padding-top: 50px;
+	border-top: solid 2px var(--blue);
+	}
+}
+@media all and (min-width: 1024px){
+	footer nav{
+		display: flex;
+		justify-content: center;
+	}
+	footer nav ul{
+		display: block;
+		margin: auto;
+	}
+}

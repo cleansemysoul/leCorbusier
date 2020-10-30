@@ -1,0 +1,24 @@
+@charset "UTF-8";
+:root{
+		--offwhite:#f8f8f8;
+		--offwhitelight: rgba(248,248,248,.8);
+		--blue:rgba(138, 181, 186, 1);
+		--brown: rgba(64, 60, 58, 1);
+		--brownlight:rgba(64, 60, 58, .5);
+}
+*{ 
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	outline:none;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+}
+@font-face {
+	font-family: 'kalambold';
+	src: url('../font/kalam-bold-webfont.woff2') format('woff2'),
+			 url('../font/kalam-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
